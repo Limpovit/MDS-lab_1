@@ -54,6 +54,19 @@ subplot(2, 2, 2), stem(x2), title('a = -0.8');
 subplot(2, 2, 3), stem(x3), title('a = 1.1');
 subplot(2, 2, 4), stem(x4), title('a = -1.1');
 
+%=== Завдання #1.4 - 1.6 ===
+%?1.5
+%?1.6
+% Знаходження піків сигналу
+fs = 1000;
+t = 0:1/fs:2;
+x = 3*sin(6*pi*t) + 5*sin(16*pi*t);
+pks = pksdetect(x);
+figure()
+plot(t, x, 'y-'); hold on;
+plot(t(pks), x(pks), 'mo '); hold off;
+xlabel('time (s)'); ylabel('x(t)');
+
 
 
 
