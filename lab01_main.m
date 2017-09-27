@@ -87,4 +87,20 @@ fprintf('Дисперсія шуму = %4.3g\n', var(r))
 fprintf('Математичне сподівання сигнал + шум = %4.3g\n', mean(x))
 fprintf('Дисперсія сигнал + шум = %4.3g\n', var(x))
 
+%=== Завдання #3.1 ===
+% Зчитування відліків біосигналів з файлу pec1.dat 
+% та побудова графіків сигналів
+pec1 = load('pec1.dat');
+fs = 1000;
+fcg = pec1(:, 1); 
+ecg = pec1(:, 2); 
+cps = pec1(:, 3);
+t = (0:length(fcg) - 1)/fs;
+figure()
+subplot(3, 1, 1), plot(t, fcg), xlim([1 4]), ylabel('ФКГ') 
+title ('Cигнал  фонокардіограми,електрокардіограми та каротидного  пульсу')
+subplot(3, 1, 2), plot(t, ecg), xlim([1 4]), ylabel('ЕКГ')
+subplot(3, 1, 3), plot(t, cps), xlim([1 4]), ylabel('СКП')
+xlabel('t')
+
 
