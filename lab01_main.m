@@ -67,6 +67,24 @@ plot(t, x, 'y-'); hold on;
 plot(t(pks), x(pks), 'mo '); hold off;
 xlabel('time (s)'); ylabel('x(t)');
 
-
+%=== Завдання #2.1 - 2.2 ===
+% Моделювання стохастичного сигналу
+fs = 200; 
+T = 1/fs; 
+D = 0.25;
+n = 0:1000;
+r = randn(size(n))*sqrt(D);    % шум
+s = 1.8*cos(20*pi*n*T);        % сигнал
+x = s + r;                     % сигнал+шум
+figure()
+plot(x)
+title('Стохастичний сигнал')
+xlabel('x'), ylabel('y')
+fprintf('Математичне сподівання сигналу = %4.3g\n', mean(s))
+fprintf('Дисперсія сигналу = %4.3g\n', var(s))
+fprintf('Математичне сподівання шуму = %4.3g\n', mean(r))
+fprintf('Дисперсія шуму = %4.3g\n', var(r))
+fprintf('Математичне сподівання сигнал + шум = %4.3g\n', mean(x))
+fprintf('Дисперсія сигнал + шум = %4.3g\n', var(x))
 
 
